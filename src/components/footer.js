@@ -5,8 +5,8 @@ const Footer = () => (
     <div className="logo" />
     <p>
       {" "}
-      <a target="_blank" rel="noopener noreferrer" href="https://lhs.fuhsd.org/">
-        Lynbrook is dank
+      <a target="_blank" rel="noopener noreferrer" href="https://www.cdc.gov/coronavirus/2019-ncov/index.html">
+        Lynbrook Covid Management App
       </a>
     </p>
   </footer>

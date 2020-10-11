@@ -26,7 +26,7 @@ const About = (props) => {
     e.preventDefault();
     console.log(props.user);
     if (props.user) {
-      axios.put("https://lyncovid-new-backend.herokuapp.com/api/users/update/" + props.user.email, {
+      axios.put("http://localhost:7000/api/users/update/" + props.user.email, {
         google_url: url
       }).then(response => console.log(response));
     }
@@ -38,110 +38,83 @@ const About = (props) => {
 
   return(
     <div className ="container">
-      <Box m = {5}>
+
+      <Box>
         <h3>
-          About Us
+          Getting Started
         </h3>
-
         <Divider/>
+
         <Box>
-          <Box pt = {2} className = "introduction container">
+          <Box pt = {5}  className = "getting started container">
             <h5>
-              Welcome to our Lynbrook COVID-app!
+              Overview
             </h5>
-            <br/>
-            <h6>
-              Our app is made to help schools manage students' covid testing records.
-              Ideally, this app's users would be homeroom teachers, so that each student is managed by a single teacher.
-            </h6>
-            <br/>
-            <h6>
-              Each homeroom class has a list of student cards which can be filtered by testing status and
-              last testing date.
-            </h6>
-
+              <Box m = {2}>
+                <h6>
+                  This app is made to help reduce the spread of COVID-19 in communities. Made for schools, this app allows homeroom teachers to
+                  have a digital database of students' testing records to keep track of the health of student and filter them based on their name, student ID, and their testing status (none, cleared, pending, uncleared). Ideally, this
+                  app's users would be homeroom teachers in a school. That way a teacher would only have to manage a certain group of students for
+                  the academic year as oposed to managing each class of students they teach.
+                </h6>
+              </Box>
           </Box>
-          <br/>
-          <Box className = "getting started container">
-            <Box>
-              <h3>
-                If this is your first time using the app, the field below should be currently blank.
-                Follow the steps below and enter the google sheet URL here before using the app.
-              </h3>
-              <Input
-                 name = "Google Sheet URL"
-                 onChange = {e => setUrl(e.target.value)}
-                 placeholder = "Google Sheet URL"
-                 fluid />
-               <Button fluid color = 'blue' onClick = {handleSubmit}>
-                 Submit
-               </Button>
-            </Box>
 
-            <Box>
-              <h4>
-                Getting Started
-              </h4>
-            </Box>
-
-            <Box m = {2}>
-              <h6>
-                To begin, start on the Home page, where the Dashboard is displayed.
-                From there, add your first class by clicking the green "Add Class" button!
-              </h6>
-              <br/>
-              <h6>
-                You should then see an Add Class form that requires
-                __check_with_aadip__ and a url to a google spreadsheet
-              </h6>
-              <br/>
-              <h6>
-                To get this google spreadsheet url, begin by clicking the link below
-                and making a copy of the template google form in your Google Drive.
-              </h6>
-              <a href = "https://docs.google.com/forms/d/1y5s3OGXzoinp9OakKOh4oMuACnVobCr7B3O5i-lsQdQ/copy"  className="profile link">
-                <h5> Link to Template Google Form </h5>
-              </a>
-              <br/>
-              <h6>
-                You should now see a google form that you can edit. Change the title of the form
-                from "Copy of Student Check-up Form Template" to "Mr. Smith Student Check-up Form Template"
-                using your last name instead of Smith.
-              </h6>
-              <br/>
-              <h6>
-                At the top of the page, switch from the Questions tab to Responses.
-                Then click the green spreadsheet icon to the bottom right of Responses.
-              </h6>
-              <img className = "photo" src = {CreateSpreadsheet} style = {{height: "350px", width: "700px"}}/>
-              <br/>
-              <h6>
-                A Google Spreadsheet should have been created in your Drive and should automatically
-                open in a new tab. Copy the URL in the browser and paste it into the empty field you saw at the top of this page.
-              </h6>
+          <Box>
+            <Box pt = {5}  className = "getting started container">
+              <h5>
+                Please follow the steps below to use the app!
+              </h5>
+                <Box m = {2}>
+                  <a href = "https://docs.google.com/forms/d/1y5s3OGXzoinp9OakKOh4oMuACnVobCr7B3O5i-lsQdQ/copy"  className="profile link">
+                  <h6>
+                    1. Click here to make a copy of the Google Form Template
+                  </h6>
+                  </a>
+                  <br/>
+                  <h6>
+                    2. After making the copy of the Google Form Template, you should now be able to see it in your Google Drive and be
+                    able to edit it. Replace the Google Form titles to "Mr. Smith Student Check-up Form"
+                    using the name your students call you instead of Mr. Smith.
+                  </h6>
+                    <br/>
+                  <h6>
+                    3. After retitling your Google Form, you have to generate a Google Sheets to keep track of the responses. To do this,
+                    click on the "Responses" tab of the Google Form located at the top of the Google Form and next to the "Questions" tab.
+                    Then click the green spreadsheet icon to the bottom right of "Responses" as illustrated below.
+                  </h6>
+                    <Box m = {2}>
+                  <img className = "photo" src = {CreateSpreadsheet} style = {{height: "350px", width: "700px"}}/>
+                    </Box>
+                    <br/>
+                  <h6>
+                    4. After generating the Google Sheets, a Google Sheets will be located in your Google Drive. Open the Google Sheet in a new
+                    tab and copy the URL in the browser. Paste the URL into the empty field below and submit.
+                  </h6>
+                    <Box m = {2}>
+                      <Input
+                       name = "Google Sheet URL"
+                       onChange = {e => setUrl(e.target.value)}
+                       placeholder = "Google Sheets URL"
+                       fluid />
+                     <Button fluid color = 'blue' onClick = {handleSubmit}>
+                       Submit
+                     </Button>
+                    </Box>
+                </Box>
+              </Box>
             </Box>
           </Box>
-          <br/>
-          <Box className = "using student list container"  >
-            <Box>
-              <h4>
-                Checking Student Statuses
-              </h4>
+            <Box pt = {5}  className = "getting started container">
+              <h5>
+                You can start using the app!
+              </h5>
+              <Box pt = {5}>
+              </Box>
             </Box>
-
-            <Box m = {2}>
-              <h6>
-                Using the side bar on the left, head to the Student List tab.
-                Here, you can filter student cards by _______ gotta wait until that funcitonality is done
-              </h6>
-            </Box>
-          </Box>
         </Box>
-      </Box>
     </div>
   )
 }
 
 export default withAuthenticationRequired(About);
-
-//thanks https://www.coffeenancy.com/2019/04/share-a-copy-of-a-google-form/ for teaching how to allow strangers to copy a google form

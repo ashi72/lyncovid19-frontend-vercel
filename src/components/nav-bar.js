@@ -31,14 +31,6 @@ const MainNav = () => (
     >
       Getting Started
     </Nav.Link>
-    <Nav.Link
-      as={RouterNavLink}
-      to="/theteam"
-      exact
-      activeClassName="router-link-exact-active"
-    >
-      The Team
-    </Nav.Link>
   </Nav>
 );
 

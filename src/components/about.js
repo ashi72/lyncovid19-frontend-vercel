@@ -26,7 +26,7 @@ const About = (props) => {
     e.preventDefault();
     console.log(props.user);
     if (props.user) {
-      axios.put("http://localhost:7000/api/users/update/" + props.user.email, {
+      axios.put("https://lyncovid-new-backend.herokuapp.com/api/users/update/" + props.user.email, {
         google_url: url
       }).then(response => console.log(response));
     }

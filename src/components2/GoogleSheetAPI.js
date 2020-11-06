@@ -7,7 +7,8 @@ const GoogleSheetAPI = (props) => {
       const getURL = async () => {
         if (props.user) {
           const url = await axios.get("https://lyncovid-new-backend.herokuapp.com/api/users/geturl/" + props.user.email).then(response => {
-            console.log(response.data)
+            
+            console.log(response.data.google_url)
             return response.data.toString()});
           return await url;
         }

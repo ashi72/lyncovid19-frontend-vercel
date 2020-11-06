@@ -22,7 +22,10 @@ const GoogleSheetAPI = (props) => {
         const firstURLHalf = "https://spreadsheets.google.com/feeds/worksheets/";
         const secondURLHalf = "/public/basic?alt=json";
         const resultURL = firstURLHalf + googleSheetURL.substring(startIndex, endIndex) + secondURLHalf;
+        console.log("this is before the axios.get result URL");
+        console.log(resultURL);
         const {data} = await axios.get(resultURL);
+        console.log("this is after the axios.get");
         return await data.feed.entry[0].id.$t;
       };
       const finalGoogleJSON = async (googleTerm, googleSheetURL) => {

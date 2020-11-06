@@ -18,6 +18,7 @@ const GoogleSheetAPI = (props) => {
       const googleJSON = async (googleSheetURL) => {
         console.log("hi");
         const startIndex = 39;
+        console.log(googleSheetURL);
         const endIndex = googleSheetURL.indexOf("edit")-1;
         const firstURLHalf = "https://spreadsheets.google.com/feeds/worksheets/";
         const secondURLHalf = "/public/basic?alt=json";
